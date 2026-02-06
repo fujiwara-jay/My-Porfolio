@@ -25,6 +25,8 @@
     --accent-emerald: #10b981;
     --accent-gold: #262f50;
     --accent-silver: #9ca3af;
+    --accent-orange: #8699c4;
+    --accent-orange-dark: #3b4c6e;
     --border-dark: #334155;
     --border-light: #e2e8f0;
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -123,6 +125,7 @@ body {
     display: flex;
     list-style: none;
     gap: 1.5rem;
+    align-items: center;
 }
 
 .nav-links a {
@@ -172,6 +175,77 @@ body {
 .nav-links a:active {
     transform: scale(0.95);
     transition: transform 0.1s ease;
+}
+
+/* Resume Button Styles in Navigation */
+.resume-nav-item {
+    margin-left: 0.5rem;
+}
+
+.resume-button {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-dark)) !important;
+    color: white !important;
+    padding: 0.6rem 1.25rem !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    transition: var(--transition-smooth) !important;
+    border: 2px solid transparent !important;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    min-height: 44px !important;
+    min-width: 44px !important;
+    font-size: 0.9rem !important;
+}
+
+.resume-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s;
+}
+
+.resume-button:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4) !important;
+    border-color: white !important;
+    color: white !important;
+}
+
+.resume-button:hover::before {
+    left: 100%;
+}
+
+.resume-button:active {
+    transform: scale(0.95) !important;
+    transition: transform 0.1s ease !important;
+}
+
+.resume-icon {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.external-icon {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+}
+
+.resume-button:hover .resume-icon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.resume-button:hover .external-icon {
+    transform: translateX(3px);
 }
 
 /* Mobile Menu Button - Enhanced for Touch */
@@ -408,6 +482,119 @@ body {
 }
 
 .skill-tag:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+}
+
+/* Resume Section Styles */
+.resume-section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--glass-bg);
+    border-radius: 16px;
+    border: 1px solid var(--border-dark);
+    backdrop-filter: blur(10px);
+    transition: var(--transition-smooth);
+}
+
+.resume-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.resume-text h3 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.resume-text p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 0;
+    max-width: 500px;
+}
+
+.resume-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Resume buttons for homepage */
+.resume-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-dark));
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    border: 2px solid transparent;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+    position: relative;
+    overflow: hidden;
+    min-height: 44px;
+    min-width: 44px;
+}
+
+.resume-btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s;
+}
+
+.resume-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--glass-bg);
+    color: var(--text-primary);
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    border: 2px solid var(--border-dark);
+    min-height: 44px;
+    min-width: 44px;
+}
+
+.resume-btn-primary:hover,
+.resume-btn-secondary:hover {
+    transform: translateY(-3px);
+}
+
+.resume-btn-primary:hover {
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
+    border-color: white;
+}
+
+.resume-btn-primary:hover::before {
+    left: 100%;
+}
+
+.resume-btn-secondary:hover {
+    background: var(--primary-gradient);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.resume-btn-primary:active,
+.resume-btn-secondary:active {
     transform: scale(0.95);
     transition: transform 0.1s ease;
 }
@@ -1421,7 +1608,10 @@ body {
     .submit-btn,
     .social-links a,
     .theme-toggle,
-    .back-to-top {
+    .back-to-top,
+    .resume-button,
+    .resume-btn-primary,
+    .resume-btn-secondary {
         min-height: 44px;
         min-width: 44px;
     }
@@ -1438,7 +1628,10 @@ body {
         .download-btn:hover,
         .submit-btn:hover:not(:disabled),
         .theme-toggle:hover,
-        .back-to-top:hover {
+        .back-to-top:hover,
+        .resume-button:hover,
+        .resume-btn-primary:hover,
+        .resume-btn-secondary:hover {
             transform: none !important;
         }
         
@@ -1450,7 +1643,9 @@ body {
         .nav-links a:hover::before,
         .project-links a:hover,
         .download-btn:hover::before,
-        .submit-btn:hover:not(:disabled)::before {
+        .submit-btn:hover:not(:disabled)::before,
+        .resume-button:hover::before,
+        .resume-btn-primary:hover::before {
             opacity: 0;
             transform: none;
         }
@@ -1488,6 +1683,21 @@ body.light-mode .nav-links a {
 
 body.light-mode .nav-links a:hover {
     color: var(--text-primary);
+}
+
+body.light-mode .resume-button {
+    background: linear-gradient(135deg, var(--accent-orange), var(--accent-orange-dark)) !important;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4) !important;
+}
+
+body.light-mode .resume-button:hover {
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.5) !important;
+}
+
+body.light-mode .resume-section {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 body.light-mode .project-card,
@@ -1549,6 +1759,20 @@ body.light-mode .form-group textarea:focus {
         font-size: 1.75rem;
         margin: 3rem 0 1.5rem;
     }
+    
+    .resume-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .resume-text p {
+        max-width: 100%;
+    }
+    
+    .resume-actions {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1578,6 +1802,7 @@ body.light-mode .form-group textarea:focus {
         border-right: 1px solid var(--glass-border);
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
+        align-items: flex-start;
     }
     
     .nav-links.active {
@@ -1597,6 +1822,23 @@ body.light-mode .form-group textarea:focus {
         min-height: 44px;
         display: flex;
         align-items: center;
+        width: 100%;
+    }
+    
+    /* Resume button in mobile menu */
+    .resume-nav-item {
+        margin-left: 0;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+    }
+    
+    .resume-button {
+        width: 100%;
+        justify-content: center !important;
+        text-align: center !important;
+        margin-left: 0 !important;
     }
     
     /* Home Section */
@@ -1667,6 +1909,35 @@ body.light-mode .form-group textarea:focus {
     .certificate-category-title {
         font-size: 1.5rem;
         margin: 2.5rem 0 1.5rem;
+    }
+    
+    /* Resume Section */
+    .resume-section {
+        margin-top: 1.5rem;
+        padding: 1.25rem;
+    }
+    
+    .resume-content {
+        gap: 1rem;
+    }
+    
+    .resume-text h3 {
+        font-size: 1.1rem;
+    }
+    
+    .resume-text p {
+        font-size: 0.9rem;
+    }
+    
+    .resume-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .resume-btn-primary,
+    .resume-btn-secondary {
+        width: 100%;
+        justify-content: center;
     }
     
     /* Theme Toggle & Back to Top */
@@ -1766,7 +2037,10 @@ body.light-mode .form-group textarea:focus {
     /* Buttons */
     .download-btn,
     .project-links a,
-    .submit-btn {
+    .submit-btn,
+    .resume-button,
+    .resume-btn-primary,
+    .resume-btn-secondary {
         padding: 0.5rem 1rem;
         font-size: 0.85rem;
         min-height: 40px;
@@ -1834,6 +2108,19 @@ body.light-mode .form-group textarea:focus {
     .form-group label {
         font-size: 0.75rem;
     }
+    
+    /* Resume Section */
+    .resume-section {
+        padding: 1rem;
+    }
+    
+    .resume-text h3 {
+        font-size: 1rem;
+    }
+    
+    .resume-text p {
+        font-size: 0.85rem;
+    }
 }
 
 /* Small Mobile Devices */
@@ -1874,6 +2161,13 @@ body.light-mode .form-group textarea:focus {
     .project-image,
     .certificate-image {
         height: 160px;
+    }
+    
+    .resume-button,
+    .resume-btn-primary,
+    .resume-btn-secondary {
+        padding: 0.5rem 0.875rem;
+        font-size: 0.8rem;
     }
 }
 
@@ -1953,7 +2247,11 @@ body.light-mode ::-webkit-scrollbar-thumb {
     .project-links,
     .menu-toggle,
     .theme-toggle,
-    .back-to-top {
+    .back-to-top,
+    .resume-button,
+    .resume-section,
+    .resume-btn-primary,
+    .resume-btn-secondary {
         display: none !important;
     }
     

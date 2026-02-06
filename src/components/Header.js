@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaFilePdf, FaExternalLinkAlt } from 'react-icons/fa';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
+  // Replace this URL with your actual Google Drive resume link
+  const RESUME_URL = 'https://drive.google.com/file/d/1XPfRc6FXrcVKvYrv0NekfGLbJKzfW0_D/view?usp=sharing';
+  
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     document.body.style.overflow = !isMenuOpen ? 'hidden' : 'auto';
@@ -23,6 +26,13 @@ const Header = () => {
     { path: '/certificates', label: 'Certificates' },
     { path: '/contact', label: 'Contact' }
   ];
+
+  const handleResumeClick = (e) => {
+    e.preventDefault();
+    // Open in new tab
+    window.open(RESUME_URL, '_blank', 'noopener,noreferrer');
+    closeMenu();
+  };
 
   return (
     <header className="header">
@@ -61,6 +71,25 @@ const Header = () => {
               </Link>
             </motion.li>
           ))}
+          
+          {/* Resume Button */}
+          <motion.li 
+            className="resume-nav-item"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <a 
+              href={RESUME_URL}
+              onClick={handleResumeClick}
+              className="resume-button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFilePdf className="resume-icon" />
+              View Resume
+              <FaExternalLinkAlt className="external-icon" />
+            </a>
+          </motion.li>
         </ul>
       </nav>
     </header>
