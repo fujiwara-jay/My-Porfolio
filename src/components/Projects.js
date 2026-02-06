@@ -15,12 +15,12 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Task Management App",
-      description: "A productivity application for managing tasks with drag-and-drop functionality and team collaboration.",
-      technologies: ["React", "Firebase", "Material-UI"],
-      github: "https://github.com",
-      live: "https://example.com",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      title: "Philippine Address Selector",
+      description: "Address Selector is a standardized digital tool or UI component used to help users input their addresses accurately.",
+      technologies: ["React", "JavaScript", "CSS"],
+      github: "https://github.com/fujiwara-jay/Address-Selector-",
+      live: "https://address-selector.vercel.app/",
+      image: "https://images.unsplash.com/photo-1619468129361-605ebea04b44?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       id: 3,
