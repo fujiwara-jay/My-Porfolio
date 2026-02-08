@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,11 +11,11 @@ const Footer = () => {
           <a href="https://github.com/fujiwara-jay" target="_blank" rel="noopener noreferrer">
             <FaGithub />
           </a>
-          <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/julian-gazzingan-b6a238333/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin />
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <FaTwitter />
+          <a href="https://www.instagram.com/jayrfujiwara/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <FaInstagram />
           </a>
         </div>
         
