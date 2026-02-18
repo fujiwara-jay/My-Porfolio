@@ -31,9 +31,9 @@ const Home = () => {
             I am a dedicated Information Technology student at 
             Pateros Technological College seeking an OJT opportunity 
             to bridge the gap between academic theory and industry practice. 
-            With a strong foundation in IT principles and hands-on experience 
+            With a strong foundation in IT principles and hands on experience 
             through personal web development projects, I am eager to contribute to a 
-            fast-paced team. I am a fast learner committed to delivering value while 
+            fast paced team. I am a fast learner committed to delivering value while 
             building a professional career in tech.
           </p>
           
