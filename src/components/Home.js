@@ -28,13 +28,11 @@ const Home = () => {
           <h1>Julian P. Gazzingan Jr.</h1>
           <h2>4th-Year IT Student | Aspiring Web Developer</h2>
           <p>
-            I am a dedicated Information Technology student at 
-            Pateros Technological College seeking an OJT opportunity 
-            to bridge the gap between academic theory and industry practice. 
-            With a strong foundation in IT principles and hands on experience 
-            through personal web development projects, I am eager to contribute to a 
-            fast paced team. I am a fast learner committed to delivering value while 
-            building a professional career in tech.
+               I am a dedicated 4th Year Information Technology student at Pateros Technological College
+               seeking an OJT opportunity to bridge the gap between academic theory and industry practice.
+               With a strong foundation in IT principles and hands on experience through my school projects, 
+               I am eager to contribute to a fast paced team. I am a fast learner committed to delivering value 
+               while building a professional career in tech.
           </p>
           
           <div className="skills">
